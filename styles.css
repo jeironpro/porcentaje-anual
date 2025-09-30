@@ -1,0 +1,53 @@
+body {
+    box-sizing: border-box;
+    font-family: 'Ubuntu', sans-serif;
+    margin: 0;
+    overflow: hidden;
+    padding: 0;
+}
+
+main {
+    align-items: center;
+    display: flex;
+    height: 100vh;
+    justify-content: center;
+    width: 100%;
+}
+
+.anios {
+    display: flex;
+    justify-content: space-between;
+    font-size: 18px;
+    font-weight: 600;
+}
+
+.barra-progreso {
+    background-color: #FFF;
+    border: 2px solid #000;
+    height: 30px;
+    position: relative;
+    width: 230px;
+}
+
+.barra-progreso::after {
+    background-color: #1eff00;
+    content: '';
+    display: block;
+    height: 100%;
+    left: 0;
+    position: absolute;
+    top: 0;
+    transition: width 0.3s ease;
+    width: var(--ancho-llenado, 0);
+}
+
+.porcentaje-texto {
+    color: #000;
+    font-size: 16px;
+    font-weight: 800;
+    left: 50%;
+    position: absolute;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 100;
+}
