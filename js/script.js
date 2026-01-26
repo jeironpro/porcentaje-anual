@@ -50,8 +50,8 @@ document.addEventListener('DOMContentLoaded', () => {
                 punto.classList.add('completado');
             }
             
-            // Tooltip nativo
-            punto.title = `Día ${i}`;
+            // Tooltip personalizado
+            punto.setAttribute('data-tooltip', `Día ${i}`);
             
             fragmento.appendChild(punto);
         }

@@ -93,10 +93,41 @@ main {
     border-radius: 50%;
     transition: transform 0.2s ease, background-color 0.3s ease;
     width: 100%;
+    position: relative;
+    cursor: pointer;
+}
+
+.punto-dia:hover {
+    transform: scale(1.1);
 }
 
 .punto-dia.completado {
     background-color: #3b82f6;
+}
+
+.punto-dia::after {
+    content: attr(data-tooltip);
+    position: absolute;
+    bottom: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #1f2937;
+    color: white;
+    padding: 4px 8px;
+    border-radius: 4px;
+    font-size: 0.75rem;
+    white-space: nowrap;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+    pointer-events: none;
+    margin-bottom: 4px;
+    z-index: 10;
+}
+
+.punto-dia:hover::after {
+    opacity: 1;
+    visibility: visible;
 }
 
 .pie-tarjeta {
@@ -167,28 +198,4 @@ main {
     transition: width 0.8s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-@media (max-width: 480px) {
-    .contenedor-principal {
-        max-height: 100vh;
-        border-radius: 0;
-    }
-    
-    .encabezado-tarjeta {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 16px;
-    }
-    
-    .etiqueta-dias {
-        align-self: flex-start;
-    }
 
-    .grid-dias {
-        gap: 5px;
-        grid-template-columns: repeat(auto-fill, minmax(8px, 1fr));
-    }
-    
-    #valor-porcentaje {
-        font-size: 2.5rem;
-    }
-}
