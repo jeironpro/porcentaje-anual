@@ -46,7 +46,7 @@ main {
     gap: 4px;
 }
 
-.titulo-proyecto {
+.titulo {
     color: #111827;
     font-size: 1.5rem;
     font-weight: 700;
@@ -109,7 +109,18 @@ main {
 
 @media (max-width: 480px) {
     .encabezado-tarjeta {
+        align-items: center;
         padding: 16px 24px;
+    }
+
+    .etiqueta-dias {
+        align-self: center;
+    }
+
+    .grid-dias {
+        gap: 6px;
+        grid-template-columns: repeat(auto-fill, minmax(8px, 1fr));
+        height: 100%;
     }
 }
 
